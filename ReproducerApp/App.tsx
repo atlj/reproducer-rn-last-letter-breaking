@@ -6,7 +6,13 @@
  */
 
 import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
+import {
+  StatusBar,
+  StyleSheet,
+  Text,
+  useColorScheme,
+  View,
+} from 'react-native';
 import {
   SafeAreaProvider,
   useSafeAreaInsets,
@@ -27,11 +33,18 @@ function AppContent() {
   const safeAreaInsets = useSafeAreaInsets();
 
   return (
-    <View style={styles.container}>
-      <NewAppScreen
-        templateFileName="App.tsx"
-        safeAreaInsets={safeAreaInsets}
-      />
+    <View style={[styles.container, safeAreaInsets]}>
+      <View style={{ alignItems: 'center' }}>
+        <Text style={styles.text}>1</Text>
+        <Text style={styles.text}>12</Text>
+        <Text style={styles.text}>123</Text>
+        <Text style={styles.text}>1234</Text>
+        <Text style={styles.text}>12345</Text>
+        <Text style={styles.text}>123456</Text>
+        <Text style={styles.text}>1234567</Text>
+        <Text style={styles.text}>12345678</Text>
+        <Text style={styles.text}>123456789</Text>
+      </View>
     </View>
   );
 }
@@ -39,6 +52,14 @@ function AppContent() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: 'white',
+  },
+  text: {
+    textAlign: 'center',
+    lineHeight: 60,
+    fontSize: 50,
+    borderBottomColor: 'red',
+    borderBottomWidth: 1,
   },
 });
 
